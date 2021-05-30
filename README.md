@@ -16,11 +16,6 @@ Platforms:
 ### pool
 `chungusminer -l pool.chunguscoin.net:3333 -u addr.worker -p x`
 
-## Production usage
-
-Basic watchdog:
-`while true; do chungusminer -l pool.org:3333 -u addr.worker -p x; echo "sleep & restart"; sleep 30; done`
-
 # Building
 
 ## Linux cmake **recommended** (Tested on Arch Linux):
