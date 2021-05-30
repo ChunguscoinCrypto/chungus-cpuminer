@@ -2,13 +2,12 @@
 cmake_minimum_required(VERSION 2.8)
 
 option(STATIC_BUILD "Build with static libraries on Linux")
-option(XENON "Build options with xenoncat")
 option(MARCH "GCC options for architecture (default: native)")
 option(MOPT "GCC options for optimization (default: -O3)")
 option(NONINTEL "Set true if running on non-intel architectures")
 
 
-project(nheqminer)
+project(chungusminer)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 # LINUX
@@ -31,27 +30,8 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 	endif()
 endif()
 
-if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-	if (XENON)
-		if (XENON EQUAL 0)
-			unset (XENONCAT)
-		else()
-			set (XENONCAT "${nheqminer_SOURCE_DIR}/external/equihash-xenon/Linux/asm/equihash_avx1.o" "${nheqminer_SOURCE_DIR}/external/equihash-xenon/Linux/asm/equihash_avx2.o")
-			add_definitions(-DXENONCAT=1)
-		endif()
-	endif()
-endif()
-
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
 	include_directories(${nheqminer_SOURCE_DIR} ${nheqminer_SOURCE_DIR}/compat)
-	if (XENON)
-		if (XENON EQUAL 0)
-			unset (XENONCAT)
-		else()
-			set (XENONCAT "${nheqminer_SOURCE_DIR}/external/equihash-xenon/Mac/equihash_avx1.o" "${nheqminer_SOURCE_DIR}/external/equihash-xenon/Mac/equihash_avx2.o")
-			add_definitions(-DXENONCAT=1)
-		endif()
-	endif()
 
 	# optimizations
 	if (MOPT)
@@ -68,17 +48,6 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 	# include_directories(${nheqminer_SOURCE_DIR} ${nheqminer_SOURCE_DIR}/compat /usr/x86_64-w64-mingw32/sys-root/mingw/include/)
 	include_directories(${nheqminer_SOURCE_DIR} ${nheqminer_SOURCE_DIR}/compat)
 	set (WINLIBS wsock32 ws2_32)
-	if (XENON)
-		if (XENON EQUAL 0)
-			unset (XENONCAT)
-		else()
-			# Not a typo: when Mingw is included, we can use Linux version of object files
-			set (XENONCAT "${nheqminer_SOURCE_DIR}/external/equihash-xenon/Linux/asm/equihash_avx1.o" "${nheqminer_SOURCE_DIR}/external/equihash-xenon/Linux/asm/equihash_avx2.o")
-			add_definitions(-DXENONCAT=1)
-			set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fpermissive")
-			set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
-		endif()
-	endif()
 endif()
 
 if (NONINTEL)

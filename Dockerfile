@@ -1,12 +1,12 @@
 FROM alpine
 
 RUN apk add --no-cache --virtual=build-dependencies git cmake make gcc g++ libc-dev boost-dev && \
-    git clone --recursive https://github.com/kost/nheqminer.git && \
-    cd /nheqminer/nheqminer && \
+    git clone https://github.com/ChunguscoinCrypto/chungus-cpuminer && \
+    cd /chungus-cpuminer/miner && \
     mkdir build && \
-    cd /nheqminer/nheqminer/build && \
-    cmake -DSTATIC_BUILD=1 -DXENON=2 -DMARCH="-m64" .. && \
+    cd /chungus-cpuminer/miner/build && \
+    cmake -DSTATIC_BUILD=1 -DMARCH="-m64" .. && \
     make && \
     apk del --purge build-dependencies
     
-ENTRYPOINT ["/nheqminer/nheqminer/build/nheqminer"]
+ENTRYPOINT ["/chungus-cpuminer/chungus-cpuminer/build/chungusminer"]

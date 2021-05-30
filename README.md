@@ -14,7 +14,7 @@ Platforms:
 # Usage
 
 ### pool
-`chungusminer -l pool.org:3333 -u addr.worker -p x`
+`chungusminer -l pool.chunguscoin.net:3333 -u addr.worker -p x`
 
 ## Production usage
 
@@ -88,11 +88,13 @@ Parameters:
 
 ## Acknowledgements
 
+Thank you Kost for creating nheqminer.
 This miner is based on Equihash Miner for NiceHash
 Thanks to Zcash developers for providing most of the code
 Special thanks to tromp for providing optimized CPU equihash solver
 
 ## Credits
 
-Author of the fork: Kost
 Author of Chunguscoin and this miner: Shafil Alam
+
+Author of the fork: Kost

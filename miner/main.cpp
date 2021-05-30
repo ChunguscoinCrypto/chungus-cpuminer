@@ -36,7 +36,6 @@ void print_help()
 	std::cout << "\t-h\t\tPrint this help and quit" << std::endl;
 	std::cout << "\t-l [location]\tStratum server:port" << std::endl;
 	std::cout << "\t-u [username]\tUsername (pool worker)" << std::endl;
-	std::cout << "\t-x [enginenum]\tEngine (-1=auto,0=tromp,1=AVX1,2=AVX2)" << std::endl;
 	std::cout << "\t-p [password]\tPassword (default: x)" << std::endl;
 	std::cout << "\t-t [num_thrds]\tNumber of threads (default: number of sys cores)" << std::endl;
 	std::cout << "\t-d [level]\tDebug print level (0 = print all, 5 = fatal only, default: 2)" << std::endl;
@@ -73,13 +72,14 @@ namespace keywords = boost::log::keywords;
 
 int main(int argc, char* argv[])
 {
-	std::cout << "Kost CPU Miner - https://github.com/kost/nheqminer " STANDALONE_MINER_NAME "/" STANDALONE_MINER_VERSION << std::endl;
-	std::cout << "Thanks to Zcash developers and community, nicehash, tromp and xenoncat. Donate!" << std::endl;
-	std::cout << "BTC:1KHRiwNdFiL4uFUGFEpbG7t2F3pUcttLuX ZEC:t1JBZzdaUUSJDs8q7SUxcCSzakThqtNRtNv" << std::endl;
+	// Init message
+	std::cout << "Chunguscoin CPU Miner - https://github.com/ChunguscoinCrypto/chungus-cpuminer " STANDALONE_MINER_NAME "/" STANDALONE_MINER_VERSION << std::endl;
+	std::cout << "Thanks to https://github.com/kost/nheqminer for creating nheqminer!" << std::endl;
+	std::cout << "Donate! DOGE: DTaWKF9kJXSxhpPksS3314pJCPGbyaXm8m" << std::endl;
 	std::cout << std::endl;
 
-	std::string location = "eu1-zcash.flypool.org:3333";
-	std::string user = "t1JBZzdaUUSJDs8q7SUxcCSzakThqtNRtNv";
+	std::string location = "pool.chunguscoin.net:3022";
+	std::string user = "RDBGDhyHRTA42xU1NiE6R58Z53w3xmnftj";
 	std::string password = "x";
 	int num_threads = -1;
 	bool benchmark = false;
@@ -92,7 +92,13 @@ int main(int argc, char* argv[])
 
 	for (int i = 1; i < argc; ++i)
 	{
-		if (argv[i][0] != '-') continue;
+		if (argv[i][0] != '-') 
+		{
+			// Tell user running default parmas
+			std::cout << "\e[1mWARNING!!\e[0m Mining to defualt wallet!! Press Ctrl - C to quit." << std::endl; // displays bold
+			std::cout << std::endl;
+			continue;
+		}
 
 		switch (argv[i][1])
 		{
