@@ -95,7 +95,7 @@ int main(int argc, char* argv[])
 		if (argv[i][0] != '-') 
 		{
 			// Tell user running default parmas
-			std::cout << "\e[1mWARNING!!\e[0m Mining to defualt wallet!! Press Ctrl - C to quit." << std::endl; // displays bold
+			std::cout << "WARNING!! Mining to defualt wallet!! Press Ctrl - C to quit." << std::endl;
 			std::cout << std::endl;
 			continue;
 		}
