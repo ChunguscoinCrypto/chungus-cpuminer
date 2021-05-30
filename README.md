@@ -1,6 +1,6 @@
 # chungus-cpuminer
 
-Chunguscoin CPU miner using Equihash
+Chunguscoin CPU miner (Equihash)
 
 *Forked from kost/nheqminer*
 
@@ -27,41 +27,29 @@ Basic watchdog:
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Ubuntu open a terminal and run the following commands:
   - `sudo apt-get install cmake build-essential libboost-all-dev`
-  - `git clone --recursive https://github.com/kost/nheqminer.git`
-  - `cd nheqminer/nheqminer`
+  - `git clone https://github.com/ChunguscoinCrypto/chungus-cpuminer`
+  - `cd chungus-cpuminer/miner`
   - `mkdir build`
   - `cd build`
-  - `cmake ..`
+  - `cmake ..` **OR** for static build `cmake -DSTATIC_BUILD=1 ..`
   - `make`
 
 ## Windows cmake **recommended** (Tested on Arch Linux):
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Ubuntu open a terminal and run the following commands:
   - `sudo apt install mingw64-winpthreads-static mingw64-boost-static cmake make git`
-  - `git clone https://github.com/kost/nheqminer.git`
-  - `cd nheqminer/nheqminer`
+  - `git clone https://github.com/ChunguscoinCrypto/chungus-cpuminer`
+  - `cd chungus-cpuminer/miner`
   - `mkdir build`
   - `cd build`
   - `cmake -DSTATIC_BUILD=1 -DMARCH="-m64" ..`
   - `make`
 
-## Full static Linux cmake (Tested on Arch Linux):
-You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
-Under Alpine open a terminal and run the following commands:
-  - `sudo apk add --update git cmake make gcc g++ libc-dev boost-dev`
-  - `git clone --recursive https://github.com/kost/nheqminer.git`
-  - `cd nheqminer/nheqminer`
-  - `mkdir build`
-  - `cd build`
-  - `cmake -DSTATIC_BUILD=1 -DMARCH="-m64" ..`
-  - `make`
-
-
-## Mac OS X  (Tromp and Xenoncat):
+## Mac OS X:
 You need to have git, cmake, make and Mac OS X Developer stuff (compiler, etc).
 Under Mac open a terminal and run the following commands:
-  - `git clone --recursive https://github.com/kost/nheqminer.git`
-  - `cd nheqminer/nheqminer`
+  - `git clone https://github.com/ChunguscoinCrypto/chungus-cpuminer`
+  - `cd chungus/miner`
   - `mkdir build`
   - `cd build`
   - `cmake -DSTATIC_BUILD=1 ..`
