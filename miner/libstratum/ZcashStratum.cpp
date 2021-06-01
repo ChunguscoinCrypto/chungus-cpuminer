@@ -2,12 +2,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "version.h"
+#include "../version.h"
 #include "ZcashStratum.h"
 
-#include "utilstrencodings.h"
-#include "trompequihash/equi_miner.h"
-#include "streams.h"
+#include "../utilstrencodings.h"
+#include "../trompequihash/equi_miner.h"
+#include "../streams.h"
 
 #include <iostream>
 #include <atomic>
@@ -21,7 +21,7 @@
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/thread/thread.hpp>
 
-#include "speed.hpp"
+#include "../speed.hpp"
 
 #ifdef WIN32
 #include <Windows.h>

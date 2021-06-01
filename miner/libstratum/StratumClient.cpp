@@ -4,14 +4,14 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "StratumClient.h"
-#include "version.h"
-#include "streams.h"
+#include "../version.h"
+#include "../streams.h"
 //#include "util.h"
 
-#include "utilstrencodings.h"
+#include "../utilstrencodings.h"
 
-#include "json/json_spirit_reader_template.h"
-#include "json/json_spirit_utils.h"
+#include "../json/json_spirit_reader_template.h"
+#include "../json/json_spirit_utils.h"
 
 using boost::asio::ip::tcp;
 using namespace json_spirit;

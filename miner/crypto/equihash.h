@@ -7,8 +7,7 @@
 #define BITCOIN_EQUIHASH_H
 
 #include "blake2/blake2.h"
-#include "crypto/sha256.h"
-#include "utilstrencodings.h"
+#include "../utilstrencodings.h"
 
 //#include "sodium.h"
 

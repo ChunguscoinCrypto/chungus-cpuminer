@@ -3,7 +3,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "libstratum/ZcashStratum.h"
+#include "../libstratum/ZcashStratum.h"
 
 #include <iostream>
 #include <boost/array.hpp>
@@ -13,7 +13,7 @@
 #include <thread>
 #include <atomic>
 
-#include "json/json_spirit_value.h"
+#include "../json/json_spirit_value.h"
 
 using namespace std;
 using namespace boost::asio;

@@ -1,8 +1,8 @@
 #ifndef _ZCPROOF_H_
 #define _ZCPROOF_H_
 
-#include "serialize.h"
-#include "uint256.h"
+#include "../serialize.h"
+#include "../uint256.h"
 
 namespace libzcash {
 

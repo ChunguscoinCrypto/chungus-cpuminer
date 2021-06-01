@@ -1,6 +1,6 @@
 #include "Note.hpp"
 #include "prf.h"
-#include "crypto/sha256.h"
+#include "../crypto/sha256.h"
 
 #include "version.h"
 #include "streams.h"

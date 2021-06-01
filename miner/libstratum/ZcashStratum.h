@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "arith_uint256.h"
-#include "primitives/block.h"
-#include "uint256.h"
+#include "../arith_uint256.h"
+#include "../primitives/block.h"
+#include "../uint256.h"
 //#include "util.h"
 
 #include <boost/signals2.hpp>
@@ -13,7 +13,7 @@
 #include <thread>
 #include <mutex>
 
-#include "json/json_spirit_value.h"
+#include "../json/json_spirit_value.h"
 
 using namespace json_spirit;
 

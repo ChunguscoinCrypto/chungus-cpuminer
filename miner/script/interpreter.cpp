@@ -5,14 +5,14 @@
 
 #include "interpreter.h"
 
-#include "primitives/transaction.h"
+#include "../primitives/transaction.h"
 #include "crypto/ripemd160.h"
-#include "crypto/sha1.h"
-#include "crypto/sha256.h"
-#include "eccryptoverify.h"
-#include "pubkey.h"
-#include "script/script.h"
-#include "uint256.h"
+#include "../crypto/sha1.h"
+#include "../crypto/sha256.h"
+#include "../eccryptoverify.h"
+#include "../pubkey.h"
+#include "../script/script.h"
+#include "./uint256.h"
 
 using namespace std;
 
