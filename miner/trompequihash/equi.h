@@ -14,7 +14,7 @@
 #else
 #ifndef WIN32
 #include <endian.h>
-#else
+#elif __linux__
 #include "compat/endian.h"
 #include "trompequihash/pthreads/pthread.h"
 #undef _POSIX_THREADS

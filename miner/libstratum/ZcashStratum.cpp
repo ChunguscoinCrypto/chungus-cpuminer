@@ -24,7 +24,7 @@
 #include "../speed.hpp"
 
 #ifdef WIN32
-#include <Windows.h>
+#include <windows.h>
 #endif
 
 #include <boost/static_assert.hpp>
@@ -690,19 +690,7 @@ void ZcashMiner::start()
 	{
 		minerThreadActive[i] = true;
 		minerThreads[i] = std::thread(boost::bind(&ZcashMinerThread, this, nThreads, i));
-#ifdef WIN32
-		HANDLE hThread = minerThreads[i].native_handle();
-		if (!SetThreadPriority(hThread, THREAD_PRIORITY_LOWEST))
-		{
-			BOOST_LOG_CUSTOM(warning, i) << "Failed to set low priority";
-		}
-		else
-		{
-			BOOST_LOG_CUSTOM(debug, i) << "Priority set to " << GetThreadPriority(hThread);
-		}
-#else
-		// todo: linux set low priority
-#endif
+		// todo set low for linux and win32
 	}
     /*minerThreads = new boost::thread_group();
     for (int i = 0; i < nThreads; i++) {
