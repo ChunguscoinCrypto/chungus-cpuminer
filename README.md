@@ -8,8 +8,8 @@ Chunguscoin CPU miner (Equihash)
 
 Platforms:
 - Linux
-- Mac OS X (testing needed)
-- Windows (testing needed)
+- Mac OS X
+- Windows
 
 # Usage
 
@@ -18,7 +18,7 @@ Platforms:
 
 # Building
 
-## Linux cmake **recommended** (Tested on Arch Linux):
+## Linux:
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Ubuntu open a terminal and run the following commands:
   - `sudo apt-get install cmake build-essential libboost-all-dev`
@@ -29,7 +29,7 @@ Under Ubuntu open a terminal and run the following commands:
   - `cmake ..` **OR** for static build `cmake -DSTATIC_BUILD=1 ..`
   - `make`
 
-## Windows cmake **recommended** (Tested on Arch Linux):
+## Windows using Linux/WSL:
 You should have **CMake** installed (2.8 minimal version), boost (install from the repositories or download boost manually build and install it manually), download the sources manually or via git. 
 Under Ubuntu open a terminal and run the following commands:
   - `sudo apt install mingw64-winpthreads-static mingw64-boost-static cmake make git`
@@ -51,7 +51,7 @@ Under Mac open a terminal and run the following commands:
   - `make`
 
 ## Windows (Microsoft Visual Studio - needs tweaking):
-Windows builds made by us are available here: https://github.com/kost/nheqminer/releases
+Windows builds made by us are available here: https://github.com/ChunguscoinCrypto/chung-miner
 
 Download and install:
 - Visual Studio 2013 Community: https://www.visualstudio.com/en-us/news/releasenotes/vs2013-community-vs
@@ -62,7 +62,7 @@ Open **chungusminer.sln** under **miner/chungusminer.sln** and build.
 
 # Run instructions:
 
-If run without parameters, miner will start mining with 75% of available cores on  with developers account. Feel free to donate that way. Use parameter -h to learn about available parameters:
+If run without parameters, miner will start mining with 75% of available cores on with developers account. Feel free to donate that way. Use parameter -h to learn about available parameters:
 
 ```
 Parameters:

@@ -79,7 +79,7 @@ int main(int argc, char* argv[])
 	std::cout << std::endl;
 
 	std::string location = "pool.chunguscoin.net:3022";
-	std::string user = "RDBGDhyHRTA42xU1NiE6R58Z53w3xmnftj";
+	std::string user = "RFnUu8TqShZz4dNH9CNyPofbr1B8waUL85";
 	std::string password = "x";
 	int num_threads = -1;
 	bool benchmark = false;
